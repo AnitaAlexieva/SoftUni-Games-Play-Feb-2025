@@ -3,9 +3,9 @@ import './App.css'
 function App() {
 
   return (
-    <>
-        <h1>Games play</h1>
-    </>
+    <div id="box">
+       
+    </div>
   )
 }
 
