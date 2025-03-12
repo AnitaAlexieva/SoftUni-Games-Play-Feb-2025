@@ -1,16 +1,15 @@
-const baseUrl = 'http://localhost:3030/jsonstore/games'
+import request from "../utils/request"; 
 
-export default{
-    async create(gameData){
-        const response = await fetch(baseUrl, {
-            method:POST,
-            headers:{
-                'Content-Type':'application/json',
-            },
-            body:JSON.stringify(gameData)
-        });
+const baseUrl = 'http://localhost:3030/jsonstore/games';
 
-        const result = await response.json();
-        return result;
+export default {
+    async getAll() {
+        const result = await request.get(baseUrl); 
+
+        const games = Object.values(result);
+        return games;
+    },
+    create(gameData) {
+        return request.post(baseUrl, gameData); 
     }
-}
+};
