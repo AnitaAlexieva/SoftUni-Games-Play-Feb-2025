@@ -1,0 +1,26 @@
+{
+    "3b51a7c6-a0a9-4e5a-a7ae-af452777d7d2": {
+        "title": "Left to Survive",
+        "category": "action",
+        "maxLevel": "10",
+        "imageUrl": "https://store.my.games/hotbox/showcase/pocket/play-highlight/a0005f2c-02ea-4ed0-a26a-dc5d4ec1aa97.jpg",
+        "summary": "Left To Survive is a game about life after apocalypse – zombies have enslaved the Earth and survival war has begun! Life is no longer what it used to be: humans are fighting for survival, and the Earth belongs to the undead from now on.",
+        "_id": "3b51a7c6-a0a9-4e5a-a7ae-af452777d7d2"
+    },
+    "318e823e-8247-466b-8fd3-de5ed8e1da51": {
+        "title": "Lady Popular",
+        "category": "Fashion",
+        "maxLevel": "100",
+        "imageUrl": "https://ladypopularstyle.com/wp-content/uploads/2019/09/LP_Nature_inspired_0_.png",
+        "summary": "Lady Popular is a casual dress-up game that aims primarily at a female audience. Lady Popular has been translated into 21 languages and has over 8 million registered users.",
+        "_id": "318e823e-8247-466b-8fd3-de5ed8e1da51"
+    },
+    "40938132-7757-44a0-9cd6-efb720faf9a9": {
+        "title": "Mincraft",
+        "category": "Creative, Survival",
+        "maxLevel": "10",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b6/Minecraft_2024_cover_art.png",
+        "summary": "Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art – the choice is all yours. But if the thought of exploring a vast new world all on your own feels overwhelming, then fear not!",
+        "_id": "40938132-7757-44a0-9cd6-efb720faf9a9"
+    }
+}
