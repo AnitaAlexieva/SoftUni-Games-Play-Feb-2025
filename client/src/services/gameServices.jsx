@@ -9,6 +9,9 @@ export default {
         const games = Object.values(result);
         return games;
     },
+    getOne(gameId) {
+        return request.get(`${baseUrl}/${gameId}`);  
+    },
     create(gameData) {
         return request.post(baseUrl, gameData); 
     }

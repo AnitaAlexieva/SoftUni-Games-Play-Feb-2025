@@ -22,5 +22,13 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b6/Minecraft_2024_cover_art.png",
         "summary": "Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art – the choice is all yours. But if the thought of exploring a vast new world all on your own feels overwhelming, then fear not!",
         "_id": "40938132-7757-44a0-9cd6-efb720faf9a9"
+    },
+    "cec110fd-b718-4bdb-9111-2174044d9481": {
+        "title": "NFS: Underground",
+        "category": "Racing",
+        "maxLevel": "5",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/52/Need_for_Speed_Underground_cover.jpg",
+        "summary": "\nNeed for Speed: Underground completely redesigned the series' formula with a heavy emphasis on tuner culture and a storyline-driven career mode. All races take place in a generic city at night, featuring vehicles associated with the import scene rather than exotic cars.",
+        "_id": "cec110fd-b718-4bdb-9111-2174044d9481"
     }
 }
