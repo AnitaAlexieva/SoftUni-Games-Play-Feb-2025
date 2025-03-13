@@ -14,5 +14,8 @@ export default {
     },
     create(gameData) {
         return request.post(baseUrl, gameData); 
+    },
+    deleteOne(gameId){
+        return request.delete(`${baseUrl}/${gameId}`);
     }
 };
