@@ -57,7 +57,7 @@ export default function GameDetails() {
     
             {/* <!-- Edit/Delete buttons ( Only or creator of this game )  --> */}
             <div className="buttons">
-                <Link href="#" className="button">Edit</Link>
+                <Link to={`/games/${gameId}/edit`} className="button">Edit</Link>
 
                 <button 
                     onClick={gameDeleteClickHnadler}
