@@ -1,19 +1,18 @@
-export default function CommentsShow() {
-    return(
-            <div className="details-comments">
-                <h2>Comments:</h2>
+export default function CommentsShow({ comments }) {
+    return (
+        <div className="details-comments">
+            <h2>Comments:</h2>
+            {comments.length > 0 ? (
                 <ul>
-                    {/* <!-- list all comments or current game (If any) --> */}
-                    <li className="comment">
-                        <p>Content: I rate this one quite highly.</p>
-                    </li>
-                    <li className="comment">
-                        <p>Content: The best game.</p>
-                    </li>
+                    {comments.map(({ _id, email, comment }) => (
+                        <li key={_id} className="comment">
+                            <p>{email}: {comment}</p>
+                        </li>
+                    ))}
                 </ul>
-                {/* <!-- Display paragraph: If there are no games in the database --> */}
+            ) : (
                 <p className="no-comment">No comments.</p>
-            </div>
-    
-    )
+            )}
+        </div>
+    );
 }
