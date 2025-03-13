@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router"
 import gameServices from "../../services/gameServices";
+import CommentsShow from "../comments-show/CommentsShow";
+import CommentsCreate from "../comments-create/ComentsCreate";
 
 export default function GameDetails() {
     const navigate = useNavigate();
@@ -39,22 +41,8 @@ export default function GameDetails() {
                 {game.summary}
             </p>
     
-            {/* <!-- Bonus ( or Guests and Users ) --> */}
-            <div className="details-comments">
-                <h2>Comments:</h2>
-                <ul>
-                    {/* <!-- list all comments or current game (If any) --> */}
-                    <li className="comment">
-                        <p>Content: I rate this one quite highly.</p>
-                    </li>
-                    <li className="comment">
-                        <p>Content: The best game.</p>
-                    </li>
-                </ul>
-                {/* <!-- Display paragraph: If there are no games in the database --> */}
-                <p className="no-comment">No comments.</p>
-            </div>
-    
+            <CommentsShow/>
+
             {/* <!-- Edit/Delete buttons ( Only or creator of this game )  --> */}
             <div className="buttons">
                 <Link to={`/games/${gameId}/edit`} className="button">Edit</Link>
@@ -69,16 +57,7 @@ export default function GameDetails() {
             </div>
         </div>
     
-        {/* <!-- Bonus --> */}
-        {/* <!-- Add Comment ( Only or logged-in users, which is not creators of the current game ) --> */}
-        <article className="create-comment">
-            <label>Add new comment:</label>
-            <form className="orm">
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input className="btn submit" type="submit" value="Add Comment"/>
-            </form>
-        </article>
-    
+            <CommentsCreate/>
     </section>
     
     )
