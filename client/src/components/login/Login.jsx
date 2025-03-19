@@ -6,7 +6,7 @@ import { useLogin } from "../../api/authAPI";
 export default function Login({
     onLogin,
 }) {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const {login} = useLogin();
 
     const loginHandler =async (_,formdata) =>{
