@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router'
+import { UserContext } from './contexts/UserContext'
 
 import Header from './components/header/header'
 import Home from './components/home/Home'
@@ -19,6 +20,9 @@ function App() {
   }
 
   return (
+
+    <UserContext.Provider value={{...authData, useLoginHandler}}>
+
     <div id="box">
         <Header/>
 
@@ -26,15 +30,16 @@ function App() {
             <Routes>
                 <Route index element={<Home/>} />
                 <Route path='/games' element={<GameCatalog/>} />
-                <Route path='/games/:gameId/details' element={<GameDetails email={authData.email} />}/>
+                <Route path='/games/:gameId/details' element={<GameDetails />}/>
                 <Route path='/games/create' element={<GameCreate/>} />
                 <Route path='/games/:gameId/edit' element={<GameEdit/>}/>
-                <Route path='/login' element={<Login onLogin={useLoginHandler}/>} />
+                <Route path='/login' element={<Login/>} />
                 <Route path='/register' element={<Register/>} />
             </Routes>
         </main>
 
     </div>
+    </UserContext.Provider>
   )
 }
 
