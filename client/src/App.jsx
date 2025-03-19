@@ -12,11 +12,10 @@ import GameEdit from './components/game-edit/GameEdit'
 import { useState } from 'react'
 
 function App() {
-  const [email, setEmail] = useState('');
+  const [authData, setAthData] = useState({});
 
-  const useLoginHandler  = (authData) =>{
-    console.log(authData);
-    setEmail(authData.email);
+  const useLoginHandler  = (resultData) =>{
+    setAthData(resultData);
   }
 
   return (
@@ -27,7 +26,7 @@ function App() {
             <Routes>
                 <Route index element={<Home/>} />
                 <Route path='/games' element={<GameCatalog/>} />
-                <Route path='/games/:gameId/details' element={<GameDetails email={email} />}/>
+                <Route path='/games/:gameId/details' element={<GameDetails email={authData.email} />}/>
                 <Route path='/games/create' element={<GameCreate/>} />
                 <Route path='/games/:gameId/edit' element={<GameEdit/>}/>
                 <Route path='/login' element={<Login onLogin={useLoginHandler}/>} />
