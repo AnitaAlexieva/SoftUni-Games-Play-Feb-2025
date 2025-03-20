@@ -6,7 +6,7 @@ import { UserContext } from "../../contexts/UserContext";
 
 export default function Login() {
     const navigate = useNavigate();
-    const {userLoginHandler} = useContext(UserContext)
+    const {useLoginHandler} = useContext(UserContext)
     const {login} = useLogin();;
 
     const loginHandler =async (_,formdata) =>{
@@ -15,7 +15,7 @@ export default function Login() {
 
         const authData = await login(values.email, values.password);
         
-        userLoginHandler(authData);
+        useLoginHandler(authData);
 
         navigate('/games');
         
