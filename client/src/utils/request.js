@@ -16,6 +16,10 @@ const request = async (method, url, data, options = {}) => {
     }
 
     const response = await fetch(url, options);
+    const responseContentTyoe = response.headers.get('Content-Type')
+    if(!responseContentTyoe){
+        return;
+    }
     const result = await response.json();
 
     return result;
