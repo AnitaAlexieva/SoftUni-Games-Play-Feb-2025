@@ -1649,7 +1649,19 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        games:[
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Lady Popular",
+                "category": "Fashion",
+                "maxLevel": "122",
+                "imageUrl": "https://ladypopularstyle.com/wp-content/uploads/2019/09/LP_Nature_inspired_0_.png",
+                "summary": "Lady Popular is a casual dress-up game that aims primarily at a female audience. Lady Popular has been translated into 21 languages and has over 8 million registered users.",
+                "_createdOn": 1742543912963,
+                "_id": "ca75b202-ceb4-4a59-bb80-bc5027f6c71a"
+            }
+        ]
     };
     var rules$1 = {
     	users: {
