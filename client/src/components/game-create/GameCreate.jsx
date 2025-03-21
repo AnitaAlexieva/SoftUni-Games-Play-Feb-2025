@@ -1,14 +1,16 @@
-import gameServices from "../../services/gameServices";
+import { useCreateGame } from "../../api/gameApi";
 //useNavigate is a hook
 import { useNavigate } from "react-router";
 
 export default function GameCreate() {
     const navigate = useNavigate();
+    //при деструткориране има опция за преименуване
+    const {create : createGame} = useCreateGame();
 
     const submitAction =async (formData) =>{
         const gameData = Object.fromEntries(formData);
 
-        await gameServices.create(gameData);
+        await createGame(gameData);
 
         navigate('/games');
     }
