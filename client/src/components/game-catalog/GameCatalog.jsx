@@ -1,17 +1,11 @@
 import { useEffect, useState } from "react"
 import gameServices from "../../services/gameServices"
 import GameCatalogItem from "./game-catalog-item/GameCatalogItem";
+import { useGames } from "../../api/gameApi";
 
 
 export default function GameCatalog() {
-    const [games, setGames] = useState([]);    
-
-    useEffect(()=>{
-            gameServices.getAll()
-                .then(setGames)
-            //Когато резултатът пристигне подай директно на setGames    
-    },[])
-    console.log(games);
+    const {games} = useGames();
 
     return(
         <section id="catalog-page">

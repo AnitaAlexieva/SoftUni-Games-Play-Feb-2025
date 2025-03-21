@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import request from "../utils/request"; 
 import { UserContext } from "../contexts/UserContext";
 
@@ -23,6 +23,18 @@ export default {
     }
 };
 
+export const useGames = () =>{
+    const [games, setGames] = useState([]);
+
+    useEffect(() =>{
+            //Правим заявка към басик юрл за взимане на данни
+            request.get(baseUrl)
+            //след като отговора пристигне го сетваш в games
+                .then(setGames)
+    },[])
+
+    return {games};
+}
 
 export const useCreateGame = () =>{
     const {accessToken} = useContext(UserContext);
