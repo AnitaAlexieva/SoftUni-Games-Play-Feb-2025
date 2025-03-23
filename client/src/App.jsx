@@ -10,11 +10,11 @@ import GameCatalog from './components/game-catalog/GameCatalog'
 import GameCreate from './components/game-create/GameCreate'
 import GameDetails from './components/game-details/GameDetails'
 import GameEdit from './components/game-edit/GameEdit'
-import { useState } from 'react'
 import Logout from './components/logout/Logout'
+import usePersistedState from './hooks/usePersistedState'
 
 function App() {
-  const [authData, setAthData] = useState({});
+  const [authData, setAthData] = usePersistedState('auth',{});
 
   const useLoginHandler  = (resultData) =>{
     setAthData(resultData);
