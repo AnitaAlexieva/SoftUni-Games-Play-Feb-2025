@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router'
-import { UserContext } from './contexts/UserContext'
 
 import Header from './components/header/header'
 import Home from './components/home/Home'
@@ -11,40 +10,28 @@ import GameCreate from './components/game-create/GameCreate'
 import GameDetails from './components/game-details/GameDetails'
 import GameEdit from './components/game-edit/GameEdit'
 import Logout from './components/logout/Logout'
-import usePersistedState from './hooks/usePersistedState'
+import { UserProvider } from './providers/UserProvider'
 
 function App() {
-  const [authData, setAthData] = usePersistedState('auth',{});
-
-  const useLoginHandler  = (resultData) =>{
-    setAthData(resultData);
-  }
-
-  const userLogoutHandler = () =>{
-    setAthData({});
-  }
+  
   return (
 
-    <UserContext.Provider value={{...authData, useLoginHandler, userLogoutHandler}}>
+    <UserProvider>
+      <div id="box">
+          <Header/>
+      
+          <main id="main-content">
+              <Routes>
+                  <Route index element={<Home/>} />
+                  <Route path='/games' element={<GameCatalog/>} />
+                  <Route path='/register' element={<Register/>} />
+              </Routes>
+          </main>
 
-    <div id="box">
-        <Header/>
+      </div>
+    </UserProvider>
 
-        <main id="main-content">
-            <Routes>
-                <Route index element={<Home/>} />
-                <Route path='/games' element={<GameCatalog/>} />
-                <Route path='/games/:gameId/details' element={<GameDetails />}/>
-                <Route path='/games/create' element={<GameCreate/>} />
-                <Route path='/games/:gameId/edit' element={<GameEdit/>}/>
-                <Route path='/login' element={<Login/>} />
-                <Route path='/register' element={<Register/>} />
-                <Route path='/logout' element={<Logout/>}/>
-            </Routes>
-        </main>
-
-    </div>
-    </UserContext.Provider>
+   
   )
 }
 
