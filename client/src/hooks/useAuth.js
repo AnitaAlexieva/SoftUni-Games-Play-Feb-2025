@@ -20,6 +20,7 @@ export default function useAuth(){
         ...authData,
         // !!-way to tramsform in boolean
         isAuthenticated:!!authData.accessToken,
+        userId: authData._id,
         request:{
             get: requestWrapper.bind(null, 'GET'),
             post: requestWrapper.bind(null, 'POST'),
